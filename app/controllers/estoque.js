@@ -1,12 +1,11 @@
 var db = require('../../config/dbCon');
 
-module.exports.cadastrar = function(application, req, res){
-    res.render("usuario/cadastrar", {validacao : null, dadosUser: {}});
+module.exports.ProdutoCadastrar = function(application, req, res){
+    res.render("estoque/cadastrar", {validacao : null, dadosUser: {}});
 }
 
-module.exports.cadastrarUsuario = function(application, req, res){
+module.exports.ProdutoCadastrarSalvar = function(application, req, res){
     var dadosUser = req.body;
-    var crypto = require('crypto');
 
     req.assert('usuario', 'O nome é obrigatório.').notEmpty();
     req.assert('senha', 'A senha é obrigatória.').notEmpty();
@@ -15,7 +14,7 @@ module.exports.cadastrarUsuario = function(application, req, res){
     var erros = req.validationErrors();
 
     if (erros){
-        res.render("usuario/cadastrar", {validacao : erros, dadosUser: dadosUser});
+        res.render("estoque/cadastrar", {validacao : erros, dadosUser: dadosUser});
         return;
     }
 
@@ -23,6 +22,6 @@ module.exports.cadastrarUsuario = function(application, req, res){
     var CadastroModel = new application.app.models.CadastroDAO(conCad);
 
     CadastroModel.cadastrarUsuario(dadosUser, function(error, result){ 
-        res.redirect('/cadastrar');
+        res.redirect('/produto/cadastrar');
     });
 }

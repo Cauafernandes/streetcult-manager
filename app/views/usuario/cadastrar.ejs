@@ -1,0 +1,33 @@
+<% include ../includes/head %>
+<% include ../includes/header %>
+<main class="main user-register">
+    <div class="container">
+        <h2>Cadastrar Usuário</h2>
+        <form action="/cadastrar/salvar" method="post" class="form__default">
+            <div class="label-box">
+                <label><i class="fas fa-user"></i></label>
+                <input type="text" id="usuario" name="usuario" value="<%= dadosUser.usuario %>" placeholder="Usuário"/>
+            </div>
+            <div class="label-box">
+                <label><i class="fas fa-at"></i></label>
+                <input type="email" id="email" name="email" value="<%= dadosUser.email %>" placeholder="E-Mail"/>
+            
+            </div>
+            <div class="label-box">
+                <label><i class="fas fa-lock"></i></label>
+                <input type="password" id="senha" name="senha" value="<%= dadosUser.senha %>" placeholder="Senha"/>
+            </div>
+            <button type="submit">Cadastrar</button>
+            <% if (validacao){ %>
+                <ul class="validations">
+                    <% for (var i = 0; i < validacao.length; i++){ %>
+                        <li>
+                            <%= validacao[i].msg %>
+                        </li>
+                    <% } %>
+                </ul>
+            <% } %>
+        </form>
+    </div>
+</main>
+<% include ../includes/footer %>

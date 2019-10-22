@@ -2,16 +2,16 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8"/>
-        <title>Login - Grão de Gente Funcionários</title>
+        <title>Login - StreetCult Manager</title>
         <link rel="icon" href="/static/assets/img/icon.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
-        <meta name="description" content="Sistema de gerenciamento de funcionário da Grão de Gente"/>
-        <meta name="author" content="Grão de Gente"/>
-        <meta name="keywords" content="Grão de Gente"/>
+        <meta name="description" content="StreetCult Manager"/>
+        <meta name="author" content="StreetCult Manager"/>
+        <meta name="keywords" content="StreetCult Manager,Manager,Gerenciar,Gerenciamento,StreetCult"/>
         <meta name="robots" content="INDEX, FOLLOW"/>
         <meta name="langague" content="Portuguese"/>
         <meta name="country" content="Brazil"/>
-        <meta name="copyright" content="Grão de Gente Funcionários - © 2019"/>
+        <meta name="copyright" content="StreetCult Manager - © 2019"/>
         <link rel="stylesheet" href="/static/css/login.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
@@ -20,14 +20,14 @@
     </head>
     <body>
         <header class="header">
-            <a href="/" title="Grão de Gente" class="logo">
+            <a href="/" title="StreetCult Manager" class="logo">
                 <figure>
-                    <img src="/static/assets/img/logo.svg" alt="Grão de Gente Logo"/>
+                    <img src="/static/assets/img/logo.png" alt="StreetCult Manager Logo"/>
                 </figure>
             </a>
         </header>
         <main>
-            <form action="/admin/login/autenticar" method="post" id="formLogin">
+            <form action="/login/autenticar" method="post" id="formLogin">
                 <div class="label-box">
                     <label><i class="fas fa-user"></i></label>
                     <input type="text" id="usuario" name="usuario" value="<%= dadosLogin.usuario %>" placeholder="Usuário"/>
@@ -51,7 +51,7 @@
             <p id="token401"></p>
         </main>
         <footer>
-            <small class="copyright">&copy; Grão de Gente - 2019</small>
+            <small class="copyright">&copy; StreetCult Manager - 2019</small>
         </footer>
     </body>
 </html>

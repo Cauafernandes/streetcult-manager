@@ -9,7 +9,7 @@ var conMySQL = function(){
         port : '3306',
         user : 'root',
         password : '',
-        database : 'gdg-func',
+        database : 'sc-manager',
         socketPath: false,
         connectionLimit: 5,
         typeCast: function castField( field, useDefaultTypeCasting ) {

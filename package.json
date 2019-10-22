@@ -1,12 +1,12 @@
 {
-  "name": "improving",
+  "name": "streetcult",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "cls && nodemon app"
   },
-  "author": "Cauã",
+  "author": "Caua",
   "license": "ISC",
   "dependencies": {
     "alert-node": "^0.2.1",
