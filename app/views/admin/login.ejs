@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Login - Grão de Gente Funcionários</title>
+        <link rel="icon" href="/static/assets/img/icon.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+        <meta name="description" content="Sistema de gerenciamento de funcionário da Grão de Gente"/>
+        <meta name="author" content="Grão de Gente"/>
+        <meta name="keywords" content="Grão de Gente"/>
+        <meta name="robots" content="INDEX, FOLLOW"/>
+        <meta name="langague" content="Portuguese"/>
+        <meta name="country" content="Brazil"/>
+        <meta name="copyright" content="Grão de Gente Funcionários - © 2019"/>
+        <link rel="stylesheet" href="/static/css/login.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>
+        <script type="text/javascript" src="/static/js/script.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <a href="/" title="Grão de Gente" class="logo">
+                <figure>
+                    <img src="/static/assets/img/logo.svg" alt="Grão de Gente Logo"/>
+                </figure>
+            </a>
+        </header>
+        <main>
+            <form action="/admin/login/autenticar" method="post" id="formLogin">
+                <div class="label-box">
+                    <label><i class="fas fa-user"></i></label>
+                    <input type="text" id="usuario" name="usuario" value="<%= dadosLogin.usuario %>" placeholder="Usuário"/>
+                </div>
+                <div class="label-box">
+                    <label><i class="fas fa-lock"></i></label>
+                    <input type="password" id="senha" name="senha" value="<%= dadosLogin.senha %>" placeholder="Senha"/>
+                </div>
+                <button type="submit" id="entrar">Entrar</button>
+            </form>
+            <p><%= invalid %></p>
+            <% if (validacao){ %>
+                <ul class="errors-list">
+                    <% for (var i = 0; i < validacao.length; i++){ %>
+                        <li>
+                            <%= validacao[i].msg %>
+                        </li>
+                    <% } %>
+                </ul>
+            <% } %>
+            <p id="token401"></p>
+        </main>
+        <footer>
+            <small class="copyright">&copy; Grão de Gente - 2019</small>
+        </footer>
+    </body>
+</html>

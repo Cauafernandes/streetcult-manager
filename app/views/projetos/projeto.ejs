@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title><%= projeto[0].titulo %> - SSO</title>
+        <link rel="icon" href="/static/assets/img/icon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+        <meta name="description" content="Criação e desenvolvimento da Web"/>
+        <meta name="author" content="Search Solutions Online"/>
+        <meta name="keywords" content="Site,Web,E-Commerce,Desenvolvimento,Developer,Desenvolver,Divulgacao,Marketing,Digital"/>
+        <meta name="robots" content="INDEX, FOLLOW"/>
+        <meta name="langague" content="Portuguese"/>
+        <meta name="country" content="Brazil"/>
+        <meta name="copyright" content="Search SO - © 2017"/>
+        <link rel="stylesheet" href="/static/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/static/plugin/slick-1.8.0/slick/slick.css"/>
+        <link rel="stylesheet" href="/static/plugin/slick-1.8.0/slick/slick-theme.css"/>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>
+        <script type="text/javascript" src="https://connect.facebook.net/pt-br/sdk.js"></script>
+        <script src="/static/plugin/slick-1.8.0/slick/slick.min.js" defer></script>
+        <script type="text/javascript" src="/static/js/script.js" defer></script>
+        <script type="text/javascript" src="/static/js/authenticate.js" defer></script>
+    </head>
+    <body>
+        <center>
+        <header>
+            <h1>Search SO Digital</h1>
+        </header>
+        <main>
+            <h3>Projeto Search SO</h1>
+                <table>
+                    <tr>
+                        <td>ID</td>
+                        <td>Titulo</td>
+                        <td>Projeto</td>
+                    </tr>
+                    <tr>
+                        <td><%= projeto[0].id_projeto %></td>
+                        <td><%= projeto[0].titulo %></td>
+                        <td><%= projeto[0].projeto %></td>
+                    </tr>
+                </table><br><br>
+                <a href="/projetos"><button style="padding:5px;">Voltar para página inicial</button></a>
+        </main>
+        <footer>
+
+        </footer>
+    </center>
+    </body>
+</html>
