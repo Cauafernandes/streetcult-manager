@@ -84,6 +84,12 @@ $(document).ready(function(){
   });
 });
 
+$('.plus-label').on('click', function(){
+  var inputBox = $(this).parent().html();
+  // inputBox = $.parseHTML(inputBox);
+  console.log(inputBox);
+  $(this).parent().append(inputBox);
+});
 
 //---------------------------------------------------------------------------------------------------------------------
 console.log("JavaScript Iniciado");

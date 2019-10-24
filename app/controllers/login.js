@@ -34,10 +34,9 @@ module.exports.autenticar = function(application, req, res){
     
     CadastroDAO.autenticar(dadosLogin, function(access_token, dadosLogin){
         if ( access_token == false ){
+            res.status(401);
             res.render('admin/login', {validacao: [{ location: 'body', msg: 'Usuário não encontrado.' }], dadosLogin: dadosLogin, invalid: null});
             console.log(chalk.red("O Token não foi ativado."));
-            res.status(401);
-            // res.json(null);
             res.end("");
         } else{
             console.log(chalk.green("O Token foi ativado"));
