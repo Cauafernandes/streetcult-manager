@@ -1,7 +1,6 @@
 //---------------------------------------------------------------------------------------------------------------------
 // INSERINDO O TOKEN NO HEADER
 $("#formLogin").submit(function(event){
-  event.preventDefault();
   var post_url = $(this).attr("action"); 
   var request_method = $(this).attr("method"); 
   var form_data = $(this).serialize();
@@ -14,7 +13,8 @@ $("#formLogin").submit(function(event){
     dataType: 'json',
     cache: false
   }).done(function(data){
-    if ( data != undefined && data != null) {
+    console.log('DATA - ', data);
+    if ( data != undefined && data != null ) {
       localStorage.setItem('xTokenx', data.access_token);
       window.location.href = window.location.protocol + "//" + window.location.host + "/";
       console.log('Token inserido.');

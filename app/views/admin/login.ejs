@@ -16,15 +16,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" defer></script>
         <script type="text/javascript" src="/static/js/script.js" defer></script>
     </head>
     <body>
         <header class="header">
-            <a href="/" title="StreetCult Manager" class="logo">
+            <div class="logo">
                 <figure>
                     <img src="/static/assets/img/logo.png" alt="StreetCult Manager Logo"/>
                 </figure>
-            </a>
+            </div>
         </header>
         <main>
             <form action="/login/autenticar" method="post" id="formLogin">
@@ -37,18 +38,20 @@
                     <input type="password" id="senha" name="senha" value="<%= dadosLogin.senha %>" placeholder="Senha"/>
                 </div>
                 <button type="submit" id="entrar">Entrar</button>
+                <% if ( invalid ){ %>
+                    <p><%= invalid %></p>
+                <% } %>
+                <% if ( validacao ){ %>
+                    <ul class="errors-list">
+                        <% for (var i = 0; i < validacao.length; i++){ %>
+                            <li>
+                                <%= validacao[i].msg %>
+                            </li>
+                        <% } %>
+                    </ul>
+                <% } %>
+                <p id="token401"></p>
             </form>
-            <p><%= invalid %></p>
-            <% if (validacao){ %>
-                <ul class="errors-list">
-                    <% for (var i = 0; i < validacao.length; i++){ %>
-                        <li>
-                            <%= validacao[i].msg %>
-                        </li>
-                    <% } %>
-                </ul>
-            <% } %>
-            <p id="token401"></p>
         </main>
         <footer>
             <small class="copyright">&copy; StreetCult Manager - 2019</small>

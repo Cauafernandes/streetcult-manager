@@ -21,17 +21,19 @@ module.exports.autenticar = function(application, req, res){
     req.assert('senha','Preencha uma senha válida.').notEmpty();
 
     var erros = req.validationErrors();
-
+    
     if (erros){
-        res.render('admin/login', {validacao: erros, dadosLogin: dadosLogin, invalid: null});
+        res.status(401);
+        res.render('admin/login', { validacao: erros, dadosLogin: dadosLogin, invalid: null });
         console.log(chalk.red("Dados insuficientes para entrar"), dadosLogin);
         return;
     }
 
     var con = new db();
     var CadastroDAO = new application.app.models.CadastroDAO(con);
+    
     CadastroDAO.autenticar(dadosLogin, function(access_token, dadosLogin){
-        if (access_token == false){
+        if ( access_token == false ){
             res.render('admin/login', {validacao: [{ location: 'body', msg: 'Usuário não encontrado.' }], dadosLogin: dadosLogin, invalid: null});
             console.log(chalk.red("O Token não foi ativado."));
             res.status(401);

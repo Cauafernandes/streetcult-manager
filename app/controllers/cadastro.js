@@ -15,6 +15,7 @@ module.exports.cadastrarUsuario = function(application, req, res){
     var erros = req.validationErrors();
 
     if (erros){
+        res.status(401);
         res.render("usuario/cadastrar", {validacao : erros, dadosUser: dadosUser});
         return;
     }
