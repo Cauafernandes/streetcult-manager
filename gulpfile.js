@@ -7,7 +7,7 @@ var uglify = require('gulp-uglify');
 var paths = {
     src: 'app',
     srcSCSS: 'app/public/scss/',
-    srcJS: 'app/public/js/',
+    srcJS: 'app/public/dev-js/',
 
     tmp: 'app',
     tmpCSS: 'app/public/css/',
@@ -29,4 +29,5 @@ gulp.task('htmlClean', function () {
 
 gulp.task('watch', function() {
     gulp.watch(['./app/public/scss/*.scss', './app/public/scss/pages/*.scss', './app/public/scss/pages/components/*.scss'], gulp.task('sass'));
+    gulp.watch('./app/public/dev-js/*.js', gulp.task('scripts'));
 });

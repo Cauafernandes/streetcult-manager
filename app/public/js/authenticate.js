@@ -1,18 +1,1 @@
-$(document).ready(function(){  
-    $.ajax({
-        url : '/login/authenticatetoken',
-        type: 'post',
-        dataType: 'text',
-        headers: {
-            "Authorization": 'bearer ' + localStorage.getItem('xTokenx')
-        },
-        error: function (request, status, error) {
-            console.log("Erro no Authenticate", error);
-            window.location.href='/login';
-        }
-    }).done(function(data){
-        if(data != undefined){
-            console.log("Token Validado");
-        }
-    });
-});
+$(document).ready(function(){$.ajax({url:"/login/authenticatetoken",type:"post",dataType:"text",headers:{Authorization:"bearer "+localStorage.getItem("xTokenx")},error:function(o,e,n){console.log("Erro no Authenticate",n),window.location.href="/login"}}).done(function(o){null!=o&&console.log("Token Validado")})});
