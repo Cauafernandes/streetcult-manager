@@ -1,0 +1,14 @@
+.dashboard-content {
+    &--empty{
+        color: $color-primary;
+        text-align: center;
+        padding-top: 16vh;
+        display: table;
+        width: 100%;
+
+        i {
+            margin-bottom: 15px;
+            font-size: 40px;
+        }
+    }
+}

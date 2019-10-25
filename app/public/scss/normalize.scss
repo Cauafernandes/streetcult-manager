@@ -13,13 +13,13 @@ h1, h2, h3, h4, h5, h6 {
 body {
 	margin: 0;
 	line-height: 20px;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: $family-regular;
 	color: #7f7f7f;
-	font-size: 16px;
+	font-size: 14px;
 	max-width: 1600px;
 	width: 100%;
 	margin: 0 auto;
-	background-color: #2c3338;
+	background-color: $bg-color;
 }
 
 ul {

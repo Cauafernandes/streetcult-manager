@@ -6,38 +6,33 @@
             <h2 class="form-title">Cadastrar Produto</h2>
             <div class="label-box">
                 <label><i class="fas fa-address-card"></i></label>
-                <input type="text" name="name" value="" placeholder="Nome"/>
+                <input type="text" name="nome" value="<%= dadosProduto.nome %>" placeholder="Nome"/>
             </div>
-            <div class="label-box">
-                <label><i class="fas fa-ruler-combined"></i></label>
-                <input type="email" name="sizes" value="" placeholder="Tamanho"/>
-            
-            </div>
-            <div class="label-box">
+            <!-- <div class="label-box">
                 <label><i class="fas fa-palette"></i></label>
                 <input type="password" name="color" value="" placeholder="Cor"/>
                 <span class="plus-label">+</span>
-            </div>
+            </div> -->
             <div class="label-box">
                 <label><i class="fas fa-archive"></i></label>
                 <input type="number" name="quantity" value="" placeholder="Quantidade"/>
             </div>
             <div class="label-box">
                 <label><i class="fas fa-dollar-sign"></i></label>
-                <input type="text" name="price-cust" value="" placeholder="Preço de Custo" class="preco"/>
+                <input type="text" name="precoCusto" value="<%= dadosProduto.precoCusto %>" placeholder="Preço de Custo" class="preco"/>
             </div>
             <div class="label-box">
                 <label><i class="fas fa-dollar-sign"></i></label>
-                <input type="text" name="price-sell" value="" placeholder="Preço de Venda" class="preco"/>
+                <input type="text" name="precoVenda" value="<%= dadosProduto.precoVenda %>" placeholder="Preço de Venda" class="preco"/>
             </div>
-            <div class="label-box">
+            <!-- <div class="label-box">
                 <span>Preço Promocional</span>
                 <input type="checkbox" id="precoPromocionalAtivo" name="precoPromocionalAtivo"/>
                 <div class="label-box" style="display: none;">
                     <label><i class="fas fa-dollar-sign"></i></label>
-                    <input type="text" name="price-promocional" value="" placeholder="Preço Promocional" class="preco"/>
+                    <input type="text" name="precoPromocional" value="<%= dadosProduto.precoPromocional %>" placeholder="Preço Promocional" class="preco"/>
                 </div>
-            </div>
+            </div> -->
 
             <button type="submit">Cadastrar</button>
             <% if (validacao){ %>

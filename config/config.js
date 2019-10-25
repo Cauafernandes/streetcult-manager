@@ -2,8 +2,8 @@ exports.mysqlOptions = {
     host : 'localhost',
     port : '3306',
     user : 'root',
-    password : '9698037',
-    database : 'portal_projetos',
+    password : '',
+    database : 'sc-manager',
     socketPath: false,
     connectionLimit: 5,
     typeCast: function castField( field, useDefaultTypeCasting ) {

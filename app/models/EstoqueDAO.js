@@ -1,23 +1,15 @@
-function ProjetosDAO(con){
+function EstoqueDAO(con){
     this._con = con;
 }
 
-ProjetosDAO.prototype.getProdutos = function(callback){
-    this._con.query('select * from estoque order by price desc', callback);
-};
-
-ProjetosDAO.prototype.getProjeto = function(id_projeto, callback){
-    this._con.query('select * from projeto where id_projeto = ' + id_projeto.id_projeto, callback)
+EstoqueDAO.prototype.cadastrarProduto = function(produto, callback){
+    this._con.query('insert into produtos set ?', produto, callback)
 }
 
-ProjetosDAO.prototype.salvarProjeto = function(projeto, callback){
-    this._con.query('insert into projeto set ?', projeto, callback)
-}
-
-ProjetosDAO.prototype.get5UltimosProjetos = function(callback){
-    this._con.query('select * from projeto order by data desc limit 8', callback)
+EstoqueDAO.prototype.getProdutos = function(produto, callback){
+    this._con.query('select * from produtos', produto, callback)
 }
 
 module.exports = function(){
-    return ProjetosDAO;
+    return EstoqueDAO;
 };

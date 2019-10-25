@@ -1,7 +1,17 @@
 .header{
-	background-color: #444f56;
+	background-color: $bg-color--secondary;
 	display: table;
-    width: 100%;
+	width: 100%;
+	
+	&-top, &-bottom{
+		display: table;
+		width: 100%;
+	}
+
+	&-bottom{
+		border-bottom: 1px solid $bg-color;
+		border-top: 1px solid $bg-color;
+	}
 
     .logo{
         vertical-align: middle;
@@ -10,7 +20,7 @@
 		width: 100%;
 		
 		figure{
-			border-right: 1px solid #2c3338;
+			border-right: 1px solid $bg-color;
 			padding: 10px 20px 10px 0;
 			max-width: 200px;
 		}
@@ -19,29 +29,6 @@
             width: 100%;
         }
     }
-
-    nav{
-        width: 100%;
-        
-        ul{
-            align-items: center;
-            flex-wrap: nowrap;
-            display: flex;
-
-            li{
-                padding: 0 15px;
-
-                a{
-                    transition: 0.3s all;
-                    color: #FFF;
-
-                    &:hover{
-                        color:#00BFB3;
-                    }
-                }
-            }
-        }
-	}
 	
 	.user-session{
 		vertical-align: middle;
@@ -69,6 +56,82 @@
 			color: #FFF;
 			border: none;
 			width: 100%;
+		}
+	}
+
+	.main-menu {
+		display: table;
+		width: 100%;
+
+		& > ul {
+			justify-content: flex-start;
+			-webkit-box-align: center;
+			-webkit-box-pack: start;
+			-ms-flex-align: center;
+			-ms-flex-pack: start;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			align-items: center;
+			position: relative;
+			display: flex;
+
+			& > li{
+				& > a {
+					color: $color-primary;
+					transition: 0.3s all;
+					font-size: 14px;
+					display: table;
+					padding: 15px;
+	
+					&:hover {
+						background-color: #6d7c86;
+						color: $color-secondary;
+					}
+				}
+
+				&:hover {
+					a{
+						background-color: #6d7c86;
+						color: $color-secondary;
+					}
+
+					& > .dropdown {
+						display: block;
+					}
+				}
+			}
+
+			.dropdown {
+				background-color: #6d7c86;
+				position: absolute;
+				max-width: 500px;
+				padding: 25px;
+				display: none;
+				margin: auto;
+				width: auto;
+				right: auto;
+				z-index: 3;
+				left: auto;
+				top: 50px;
+
+				li{
+					margin: 0 0 5px;
+
+					a{
+						color: $color-primary;
+						transition: 0.3s all;
+						font-size: 14px;
+
+						&:hover{
+							color: $color-secondary;
+						}
+					}
+
+					&:last-child{
+						margin: 0;
+					}
+				}
+			}
 		}
 	}
 }

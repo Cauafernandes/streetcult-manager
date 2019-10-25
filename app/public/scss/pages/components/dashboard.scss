@@ -1,0 +1,45 @@
+[class*="dashboard-"]{
+    &[class*="header"]{
+        position: relative;
+        display: table;
+        margin: 40px 0;
+        width: 100%;
+
+        .dashbaord-header--new{
+            background-color: $color-secondary;
+            text-transform: uppercase;
+            font-family: $family-bold;
+            color: $color-primary;
+            transition: 0.3s all;
+            border-radius: 5px;
+            position: absolute;
+            line-height: 14px;
+            padding: 5px 10px;
+            font-size: 14px;
+            right: 0;
+            top: 0;
+
+            &::after{
+                border-right: 2px solid $color-primary;
+                border-top: 2px solid $color-primary;
+                transform: rotate(45deg);
+                margin-left: 5px;
+                margin-top: 2px;
+                display: block;
+                float: right;
+                content: "";
+                height: 9px;
+                width: 9px;
+            }
+
+            &:hover{
+                background-color: $color-secondary-dark;
+            }
+        }
+
+        .darshboard-header--title{
+            color: $color-primary;
+            font-size: 26px;
+        }
+    }
+}

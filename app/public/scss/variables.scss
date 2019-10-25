@@ -1,3 +1,25 @@
-.hidden{
-	display: none!important;
-}
+//-----------------------------
+// COLORS VARIABLES
+//-----------------------------
+$color-primary: #FFF;
+$color-secondary: #00BFB3;
+$color-secondary-dark: #038774;
+
+$bg-color: #2c3338;
+$bg-color--secondary: #444f56;
+$bg-input: #3b4148;
+$bg-label: #363b41;
+
+$error: #f31818;
+
+//-----------------------------
+// DEVICES WIDTH'S
+//-----------------------------
+$device-mobile: 768px;
+
+//-----------------------------
+// FONT FAMILY
+//-----------------------------
+$family-light: "montserratlight";
+$family-regular: "montserratregular";
+$family-bold: "montserratbold";

@@ -7,16 +7,22 @@
             <a href="/estoque/produto/cadastrar" title="Cadastrar" class="dashbaord-header--new">Cadastrar</a>
         </div>
         <div class="dashboard-content">
+            <script>
+            console.log(products);
+            </script>
             <% if (products){ %>
                 <ul class="dashboard-content--products">
                     <% for (var i = 0; i < products.length; i++){ %>
                         <li class="dashboard-content--products-product">
-                            <%= products[i].msg %>
+                            <%= products[i].nome %>
                         </li>
                     <% } %>
                 </ul>
             <% } else { %>
-                <p>Não foi encontrado nenhum registro de produto.</p>
+                <div class="dashboard-content--empty">
+                    <i class="fas fa-dizzy"></i>
+                    <p>Não foi encontrado nenhum registro de produto.</p>
+                </div>
             <% } %>
         </div>
     </div>

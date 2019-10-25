@@ -1,32 +1,48 @@
 <header class="header">
-    <div class="container">
-        <a href="/" title="StreetCult Manager" class="logo">
-            <figure>
-                <img src="/static/assets/img/logo.png" alt="StreetCult Manager Logo"/>
-            </figure>
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/cadastrar">
-                        Cadastro
-                    </a>
-                </li>
-                <li>
-                    <a href="/vendas">
-                        Vendas
-                    </a>
-                </li>
-                <li>
-                    <a href="/estoque">
-                        Estoque
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="user-session" id="logout">
-            <i class="fas fa-user"></i>
-            <button class="button-logout">Sair</button>
+    <div class="header-top">
+        <div class="container">
+            <a href="/" title="StreetCult Manager" class="logo">
+                <figure>
+                    <img src="/static/assets/img/logo.png" alt="StreetCult Manager Logo"/>
+                </figure>
+            </a>
+            <div class="user-session" id="logout">
+                <i class="fas fa-user"></i>
+                <button class="button-logout">Sair</button>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <nav class="main-menu">
+                <ul>
+                    <li>
+                        <a href="/cadastrar" title="Usuário Dashboard">
+                            Usuário
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/vendas" title="Vendas Dashboard">
+                            Vendas
+                        </a>
+                        <div class="dropdown">
+                            <ul>
+                                <li>
+                                    <a href="/vendas/cadastrar">Cadastrar Venda</a>
+                                </li>
+                                <li>
+                                    <a href="/vendas/relatorio">Relatório Vendas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/estoque" title="Estoque Dashboard">
+                            Estoque
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </header>
