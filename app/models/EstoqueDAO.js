@@ -2,8 +2,8 @@ function ProjetosDAO(con){
     this._con = con;
 }
 
-ProjetosDAO.prototype.getProjetos = function(callback){
-    this._con.query('select * from projeto order by data_projeto desc', callback);
+ProjetosDAO.prototype.getProdutos = function(callback){
+    this._con.query('select * from estoque order by price desc', callback);
 };
 
 ProjetosDAO.prototype.getProjeto = function(id_projeto, callback){

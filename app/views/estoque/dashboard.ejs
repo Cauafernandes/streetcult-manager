@@ -1,0 +1,24 @@
+<% include ../includes/head %>
+<% include ../includes/header %>
+<main class="main dashboard-estoque">
+    <div class="container">
+        <div class="dashboard-header">
+            <h2 class="darshboard-header--title">Gerenciamento de Estoque</h2>
+            <a href="/estoque/produto/cadastrar" title="Cadastrar" class="dashbaord-header--new">Cadastrar</a>
+        </div>
+        <div class="dashboard-content">
+            <% if (products){ %>
+                <ul class="dashboard-content--products">
+                    <% for (var i = 0; i < products.length; i++){ %>
+                        <li class="dashboard-content--products-product">
+                            <%= products[i].msg %>
+                        </li>
+                    <% } %>
+                </ul>
+            <% } else { %>
+                <p>Não foi encontrado nenhum registro de produto.</p>
+            <% } %>
+        </div>
+    </div>
+</main>
+<% include ../includes/footer %>

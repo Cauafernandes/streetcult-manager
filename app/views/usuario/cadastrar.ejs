@@ -2,8 +2,8 @@
 <% include ../includes/header %>
 <main class="main user-register">
     <div class="container">
-        <h2>Cadastrar Usuário</h2>
         <form action="/cadastrar/salvar" method="post" class="form__default">
+            <h2 class="form-title">Cadastrar Usuário</h2>
             <div class="label-box">
                 <label><i class="fas fa-user"></i></label>
                 <input type="text" id="usuario" name="usuario" value="<%= dadosUser.usuario %>" placeholder="Usuário"/>

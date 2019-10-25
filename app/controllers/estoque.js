@@ -1,7 +1,11 @@
 var db = require('../../config/dbCon');
 
+module.exports.Dashboard = function(application, req, res){
+    res.render("estoque/dashboard", {products: null});
+}
+
 module.exports.ProdutoCadastrar = function(application, req, res){
-    res.render("estoque/cadastrar", {validacao : null, dadosUser: {}});
+    res.render("estoque/cadastrar", {validacao : null});
 }
 
 module.exports.ProdutoCadastrarSalvar = function(application, req, res){
@@ -17,11 +21,4 @@ module.exports.ProdutoCadastrarSalvar = function(application, req, res){
         res.render("estoque/cadastrar", {validacao : erros, dadosUser: dadosUser});
         return;
     }
-
-    var conCad = new db(); 
-    var CadastroModel = new application.app.models.CadastroDAO(conCad);
-
-    CadastroModel.cadastrarUsuario(dadosUser, function(error, result){ 
-        res.redirect('/produto/cadastrar');
-    });
 }
