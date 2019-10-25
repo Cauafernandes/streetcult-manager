@@ -1,0 +1,37 @@
+<% include ../includes/head %>
+<% include ../includes/header %>
+<main class="main product-register">
+    <div class="container">
+        <form action="/estoque/produto/editar/salvar" method="post" class="form__default">
+            <h2 class="form-title">Editar Produto</h2>
+            <div class="label-box">
+                <label><i class="fas fa-address-card"></i></label>
+                <input type="text" name="nome" value="<%= dadosProduto.nome %>" placeholder="Nome"/>
+            </div>
+            <div class="label-box">
+                <label><i class="fas fa-archive"></i></label>
+                <input type="number" name="quantity" value="" placeholder="Quantidade"/>
+            </div>
+            <div class="label-box">
+                <label><i class="fas fa-dollar-sign"></i></label>
+                <input type="text" name="precoCusto" value="<%= dadosProduto.precoCusto %>" placeholder="Preço de Custo" class="preco"/>
+            </div>
+            <div class="label-box">
+                <label><i class="fas fa-dollar-sign"></i></label>
+                <input type="text" name="precoVenda" value="<%= dadosProduto.precoVenda %>" placeholder="Preço de Venda" class="preco"/>
+            </div>
+            <button type="submit">SALVAR</button>
+
+            <% if (validacao){ %>
+                <ul class="validations">
+                    <% for (var i = 0; i < validacao.length; i++){ %>
+                        <li>
+                            <%= validacao[i].msg %>
+                        </li>
+                    <% } %>
+                </ul>
+            <% } %>
+        </form>
+    </div>
+</main>
+<% include ../includes/footer %>

@@ -10,4 +10,12 @@ module.exports = function(application){
     application.post('/estoque/produto/cadastrar/salvar', function(req,res){
         application.app.controllers.estoque.ProdutoCadastrarSalvar(application, req, res);
     });
+
+    application.get('/estoque/produto/editar', function(req,res){
+        application.app.controllers.estoque.ProdutoEditar(application, req, res);
+    });
+
+    application.get('/estoque/produto/editar/salvar', function(req,res){
+        application.app.controllers.estoque.ProdutoEditarSalvar(application, req, res);
+    });
 };

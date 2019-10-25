@@ -1,0 +1,69 @@
+.dashboard-estoque{
+    .dashboard-content {
+        &--empty{
+            color: $color-primary;
+            text-align: center;
+            padding-top: 16vh;
+            display: table;
+            width: 100%;
+    
+            i {
+                margin-bottom: 15px;
+                font-size: 40px;
+            }
+        }
+
+        &--products-header {
+            background-color: #6b6b6b;
+            border: 1px solid #FFF;
+            border-bottom: none;
+            margin: 40px 0 0;
+            display: table;
+            width: 100%;
+            
+            p {
+                border-right: 1px solid #FFF;
+                padding: 15px;
+                color: #FFF;
+                float:left;
+                width: 25%;
+
+                &:last-child{
+                    border-right: none;
+                }
+            }
+        }
+
+        &--products{
+            border: 1px solid #FFF;
+            display: table;
+            width: 100%;
+
+            &-product{
+                display: table;
+                width: 100%;
+
+                p{
+                    border-right: 1px solid #FFF;
+                    border-bottom: 1px solid #FFF;
+                    padding: 15px;
+                    color: #FFF;
+                    width: 25%;
+                    float:left;
+
+                    &:last-child{
+                        border-right:none;
+                    }
+                }
+
+                &:hover{
+                    background-color: #6b6b6b;
+                }
+
+                &:last-child{
+                    border:none;
+                }
+            }
+        }
+    }
+}

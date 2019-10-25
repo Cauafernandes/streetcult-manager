@@ -7,14 +7,22 @@
             <a href="/estoque/produto/cadastrar" title="Cadastrar" class="dashbaord-header--new">Cadastrar</a>
         </div>
         <div class="dashboard-content">
-            <script>
-            console.log(products);
-            </script>
             <% if (products){ %>
+                <div class="dashboard-content--products-header">
+                    <p>Nome</p>
+                    <p>Quantidade</p>
+                    <p>Preço Custo</p>
+                    <p>Preço Venda</p>
+                </div>
                 <ul class="dashboard-content--products">
                     <% for (var i = 0; i < products.length; i++){ %>
                         <li class="dashboard-content--products-product">
-                            <%= products[i].nome %>
+                            <a href="/estoque/produto/editar?produtoid=<%= products[i].id %>" title="Editar Produto">
+                                <p><%= products[i].nome %></p>
+                                <p><%= products[i].quantity %></p>
+                                <p><%= products[i].precoCusto %></p>
+                                <p><%= products[i].precoVenda %></p>
+                            </a>
                         </li>
                     <% } %>
                 </ul>

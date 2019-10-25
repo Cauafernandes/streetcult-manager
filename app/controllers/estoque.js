@@ -50,3 +50,15 @@ module.exports.ProdutoCadastrarSalvar = function(application, req, res){
         res.redirect("/estoque/produto/cadastrar");
     });
 }
+
+module.exports.ProdutoEditar = function(application, req, res){
+    var conCad = new db(); 
+    var EstoqueDAO = new application.app.models.EstoqueDAO(conCad);
+
+    var produtoid = req.query;
+
+    EstoqueDAO.getProduto(produtoid, function(error, result){
+        res.render('estoque/editar', { validacao: {}, dadosProduto: result });
+        return;
+    });
+}
