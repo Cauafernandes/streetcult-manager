@@ -25,14 +25,17 @@ DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
-  `precoCusto` varchar(45) DEFAULT NULL,
-  `precoVenda` varchar(45) DEFAULT NULL,
+  `precoCusto` varchar(45) NOT NULL,
+  `precoVenda` varchar(45) NOT NULL,
   `precoPromocional` varchar(45) DEFAULT NULL,
   `novidade` tinyint(4) DEFAULT NULL,
   `promocao` tinyint(4) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+  `quantity` int(11) NOT NULL,
+  `productImage` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `nome_UNIQUE` (`nome`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +44,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (4,'Camisa Chronic 1','30,00','60,00',NULL,NULL,NULL,15),(5,'Shoulder Bag','15,30','20,80',NULL,NULL,NULL,20),(6,'Bermuda Basket','15,00','30,00',NULL,NULL,NULL,50);
+INSERT INTO `produtos` VALUES (4,'Camisa Chronic 1','30,00','60,00',NULL,NULL,NULL,15,''),(5,'Shoulder Bag 2','15,00','30,00',NULL,NULL,NULL,20,'');
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,4 +83,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-28  8:57:41
+-- Dump completed on 2019-10-28 15:34:54
