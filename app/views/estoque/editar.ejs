@@ -1,8 +1,9 @@
 <% include ../includes/head %>
 <% include ../includes/header %>
+<% dadosProduto = dadosProduto[0] %>
 <main class="main product-register">
     <div class="container">
-        <form action="/estoque/produto/editar/salvar" method="post" class="form__default">
+        <form action="/estoque/produto/editar/salvar?produtoid=<%= dadosProduto.id %>" method="post" class="form__default">
             <h2 class="form-title">Editar Produto</h2>
             <div class="label-box">
                 <label><i class="fas fa-address-card"></i></label>
@@ -10,7 +11,7 @@
             </div>
             <div class="label-box">
                 <label><i class="fas fa-archive"></i></label>
-                <input type="number" name="quantity" value="" placeholder="Quantidade"/>
+                <input type="number" name="quantity" value="<%= dadosProduto.quantity %>" placeholder="Quantidade"/>
             </div>
             <div class="label-box">
                 <label><i class="fas fa-dollar-sign"></i></label>
@@ -31,6 +32,9 @@
                     <% } %>
                 </ul>
             <% } %>
+        </form>
+        <form action="/estoque/produto/deletar?produtoid=<%= dadosProduto.id %>" method="post" class="form__default">
+            <button type="submit">EXCLUIR PRODUTO</button>
         </form>
     </div>
 </main>

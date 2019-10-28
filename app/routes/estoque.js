@@ -15,7 +15,11 @@ module.exports = function(application){
         application.app.controllers.estoque.ProdutoEditar(application, req, res);
     });
 
-    application.get('/estoque/produto/editar/salvar', function(req,res){
+    application.post('/estoque/produto/editar/salvar', function(req,res){
         application.app.controllers.estoque.ProdutoEditarSalvar(application, req, res);
+    });
+
+    application.post('/estoque/produto/deletar', function(req,res){
+        application.app.controllers.estoque.ProdutoDeletar(application, req, res);
     });
 };

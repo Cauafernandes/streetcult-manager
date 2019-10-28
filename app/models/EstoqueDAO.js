@@ -3,15 +3,23 @@ function EstoqueDAO(con){
 }
 
 EstoqueDAO.prototype.cadastrarProduto = function(produto, callback){
-    this._con.query('insert into produtos set ?', produto, callback)
+    this._con.query('INSERT INTO produtos SET ?', produto, callback)
 }
 
 EstoqueDAO.prototype.getProdutos = function(produto, callback){
-    this._con.query('select * from produtos', produto, callback)
+    this._con.query('SELECT * FROM produtos', produto, callback)
 }
 
 EstoqueDAO.prototype.getProduto = function(produto, callback){
-    this._con.query('select * from produtos where id = ' + produto.produtoid, callback)
+    this._con.query('SELECT * FROM produtos WHERE id = ' + produto.produtoid, callback)
+}
+
+EstoqueDAO.prototype.updateProduto = function(produtoid, dadosProduto, callback){
+    this._con.query('UPDATE produtos SET quantity = ' + dadosProduto.quantity + ', nome = "' + dadosProduto.nome + '", precoCusto = "' + dadosProduto.precoCusto + '", precoVenda = "' + dadosProduto.precoVenda + '" where id = ' + produtoid.produtoid + '', dadosProduto, callback)
+}
+
+EstoqueDAO.prototype.deleteProduto = function(produtoid, dadosProduto, callback){
+    this._con.query('DELETE FROM produtos WHERE id = ' + produtoid.produtoid + '', dadosProduto, callback)
 }
 
 module.exports = function(){
