@@ -1,9 +1,13 @@
 <% include ./includes/head %>
 <% include ./includes/header %>
-<main class="main-content">
+<main class="main-content dashboard-main">
     <div class="container">
-        <p>Seja bem vindo ao painel administrativo da StreetCult Manager.</p>
-        <p>Usuário:</p>
+        <div class="dashboard-header">
+            <h2 class="darshboard-header--title">Seja bem vindo ao painel administrativo da StreetCult Manager.</h2>
+        </div>
+        <ul class="dashboard-content--produtos">
+            <p>Produtos em Estoque: <a href="/estoque"><%= quantidade.quantidade %></a></p>
+        </ul>
     </div>
 </main>
 <% include ./includes/footer %>

@@ -46,8 +46,8 @@ module.exports.ProdutoCadastrarSalvar = function(application, req, res){
     var conCad = new db(); 
     var EstoqueDAO = new application.app.models.EstoqueDAO(conCad);
 
-    EstoqueDAO.cadastrarProduto(dadosProduto, function(error, result){ 
-        res.redirect("/estoque/produto/cadastrar");
+    EstoqueDAO.cadastrarProduto(dadosProduto, function(error, result){
+        res.redirect("/estoque");
     });
 }
 

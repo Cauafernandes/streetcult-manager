@@ -220,6 +220,10 @@ p {
 	box-sizing: border-box;
 }
 
+*:focus, *:active {
+	outline: 0;
+}
+
 // GRID SYSTEM
 .container {
 	max-width: 1360px;

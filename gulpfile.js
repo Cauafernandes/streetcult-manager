@@ -16,7 +16,7 @@ var paths = {
 
 
 gulp.task('sass', function() {
-    return gulp.src(paths.srcSCSS + 'site.scss').pipe(sass()).pipe(cleanCSS()).pipe(gulp.dest(paths.tmpCSS));
+    return gulp.src([paths.srcSCSS + 'site.scss', paths.srcSCSS + 'login.scss']).pipe(sass()).pipe(cleanCSS()).pipe(gulp.dest(paths.tmpCSS));
 });
 
 gulp.task('scripts', function() {
