@@ -10,7 +10,7 @@ module.exports.Dashboard = function(application, req, res){
             return;
         }
 
-        if(result.length > 0){
+        if( result.length > 0 ){
             res.render("estoque/dashboard", {products: result});
         } else{
             res.render("estoque/dashboard", {products: null});
@@ -24,6 +24,9 @@ module.exports.ProdutoCadastrar = function(application, req, res){
 
 module.exports.ProdutoCadastrarSalvar = function(application, req, res){
     var dadosProduto = req.body;
+
+    dadosProduto.precoCusto = Number(dadosProduto.precoCusto.replace(',', '').replace('.', ''));
+    dadosProduto.precoVenda = Number(dadosProduto.precoVenda.replace(',', '').replace('.', ''));
 
     req.assert('nome', 'O nome é obrigatório.').notEmpty();
     req.assert('precoCusto', 'Preço custo é obrigatório.').notEmpty();

@@ -10,7 +10,7 @@ EstoqueDAO.prototype.cadastrarProduto = function(produto, callback){
 }
 
 EstoqueDAO.prototype.getProduto = function(produto, callback){
-    this._con.query('SELECT * FROM produtos WHERE id = ' + produto.produtoid, callback)
+    this._con.query('SELECT * FROM produtos WHERE id = ' + produto.produtoid, callback);
 }
 
 EstoqueDAO.prototype.updateProduto = function(produtoid, dadosProduto, callback){
