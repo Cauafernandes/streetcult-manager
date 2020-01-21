@@ -5,7 +5,23 @@
 @import './pages/pages.scss';
 
 main{
-	min-height: 74vh;
+	min-height: calc(100vh - 211px);
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+}
+ 
+*::-webkit-scrollbar-thumb {
+	background: #444f56; 
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background: #2f373b; 
 }
 
 .hidden{

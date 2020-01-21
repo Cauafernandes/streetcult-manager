@@ -1,6 +1,6 @@
 <% include ../includes/head %>
 <% include ../includes/header %>
-<% dadosProduto = dadosProduto[0] %>
+<% dadosProduto = dadosProduto %>
 <main class="main product-register">
     <div class="container">
         <form action="/estoque/produto/editar/salvar?produtoid=<%= dadosProduto.id %>" method="post" class="form__default">

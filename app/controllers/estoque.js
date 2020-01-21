@@ -58,13 +58,14 @@ module.exports.ProdutoEditar = function(application, req, res){
     var produtoid = req.query;
 
     EstoqueDAO.getProduto(produtoid, function(error, result){
-        res.render('estoque/editar', { validacao: {}, dadosProduto: result });
+        res.render('estoque/editar', { validacao: {}, dadosProduto: result[0] });
         return;
     });
 }
 
 module.exports.ProdutoEditarSalvar = function(application, req, res){
     var dadosProduto = req.body;
+    dadosProduto.id = parseInt(req.query.produtoid, 10);
 
     req.assert('nome', 'O nome é obrigatório.').notEmpty();
     req.assert('precoCusto', 'Preço custo é obrigatório.').notEmpty();
@@ -80,7 +81,7 @@ module.exports.ProdutoEditarSalvar = function(application, req, res){
     var erros = req.validationErrors();
 
     if (erros){
-        res.render("estoque/cadastrar", {validacao : erros, dadosProduto: dadosProduto});
+        res.render("estoque/editar", {validacao : erros, dadosProduto: dadosProduto});
         return;
     }
 
